@@ -1,0 +1,4 @@
+Metric,Value
+Logistic Regression Accuracy,0.474
+Random Forest Accuracy,0.476
+Baseline (majority class),0.513

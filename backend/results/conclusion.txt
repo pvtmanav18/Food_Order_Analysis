@@ -1,0 +1,33 @@
+
+CONCLUSION
+----------
+This project analyzed 1,898 food orders from the FoodHub dataset to understand
+order patterns, customer rating behavior, and the drivers of order satisfaction.
+
+Key findings:
+1. A large share of orders (about 39%) are never rated by the customer at all,
+   which itself is a useful signal for engagement analysis.
+2. Weekend orders substantially outnumber weekday orders (71% vs 29%), and
+   American and Italian cuisines dominate order volume.
+3. Order value varies meaningfully across cuisines, with some cuisines
+   commanding a consistently higher average order value than others.
+4. Order value and restaurant popularity were the strongest (though still
+   modest) predictors among the available features when attempting to
+   classify whether an order receives a high rating.
+
+Best model: Random Forest achieved an F1 score of 0.472 and
+an accuracy of 0.476 for classifying whether an order receives
+a high rating (4 or 5 stars), but did NOT outperform the majority-class baseline of 0.513. This is itself a meaningful finding: whether a customer rates an order highly is not well explained by order value, cuisine, restaurant popularity, or timing alone -- satisfaction likely depends on factors this dataset does not capture (e.g., food quality, order accuracy, prior experience with the restaurant).
+
+Business recommendation: since rating behavior is difficult to predict from
+order-level attributes alone, platforms should focus on directly encouraging
+rating submission (since 39% of orders go unrated) rather than trying to
+infer satisfaction indirectly from order value or cuisine. Popular,
+high-volume restaurants and weekend ordering patterns are useful for
+operational planning even where they don't strongly predict individual
+satisfaction.
+
+Note: this analysis is scoped to food ORDER characteristics (value, cuisine,
+restaurant, timing, and rating behavior). Delivery logistics (preparation
+time, delivery time) were intentionally excluded from this analysis, as the
+project's focus is order-level patterns rather than delivery performance.
